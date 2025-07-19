@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup Form</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        background: linear-gradient(135deg, #0d1321, #2a3d66, #1e1f3d);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Poppins", sans-serif;
+        overflow: auto;
+      }
+
+      form {
+        background: linear-gradient(
+          145deg,
+          rgba(20, 25, 45, 0.95),
+          rgba(40, 50, 70, 0.85)
+        );
+        padding: 20px;
+        border: 2px solid #ff4d6d;
+        border-radius: 15px;
+        color: #f0f0f5;
+        width: 100%;
+        max-width: 320px;
+        margin: 20px auto;
+        box-shadow: 0 8px 30px rgba(255, 77, 109, 0.3),
+          0 0 15px rgba(255, 77, 109, 0.2);
+        transition: all 0.4s ease-in-out;
+        position: relative;
+        overflow: hidden;
+      }
+      form::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 77, 109, 0.2),
+          transparent
+        );
+        transition: 0.8s;
+      }
+      form:hover::before {
+        left: 100%;
+      }
+      form:hover {
+        box-shadow: 0 10px 40px rgba(255, 206, 84, 0.4),
+          0 0 20px rgba(255, 206, 84, 0.3);
+        border: 2px solid #ffce54;
+      }
+
+      h1 {
+        color: #ff4d6d;
+        font-size: 1.8rem;
+        font-weight: 700;
+        text-align: center;
+        margin: 15px 0;
+        text-shadow: 0 0 10px rgba(255, 77, 109, 0.6);
+        animation: pulse 2.5s ease-in-out infinite;
+      }
+      @keyframes pulse {
+        0% {
+          text-shadow: 0 0 10px rgba(255, 77, 109, 0.6),
+            0 0 20px rgba(255, 77, 109, 0.4);
+          transform: scale(1);
+        }
+        50% {
+          text-shadow: 0 0 20px rgba(255, 77, 109, 0.8),
+            0 0 30px rgba(255, 77, 109, 0.6);
+          transform: scale(1.02);
+        }
+        100% {
+          text-shadow: 0 0 10px rgba(255, 77, 109, 0.6),
+            0 0 20px rgba(255, 77, 109, 0.4);
+          transform: scale(1);
+        }
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+        color: #f0f0f5;
+        font-size: 0.95rem;
+        font-weight: 500;
+        text-align: left;
+      }
+
+      div {
+        margin-bottom: 12px;
+        padding: 8px;
+        text-align: center;
+      }
+
+      input {
+        padding: 10px;
+        border: 2px solid #ff4d6d;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.03);
+        color: #f0f0f5;
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 0.9rem;
+        box-shadow: 0 3px 10px rgba(255, 77, 109, 0.3);
+        transition: all 0.3s ease-in-out;
+      }
+      input:hover,
+      input:focus {
+        border: 2px solid #ffce54;
+        box-shadow: 0 4px 15px rgba(255, 206, 84, 0.4);
+        background: rgba(255, 206, 84, 0.05);
+        transform: translateY(-1px);
+        outline: none;
+      }
+
+      button {
+        background: linear-gradient(90deg, #ff4d6d, #ff006e);
+        color: #ffffff;
+        padding: 10px 20px;
+        border: 2px solid #ff4d6d;
+        border-radius: 15px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 1rem;
+        font-weight: 600;
+        box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4);
+        transition: all 0.3s ease-in-out;
+      }
+      button:hover {
+        background: linear-gradient(90deg, #ffce54, #ff9100);
+        border: 2px solid #ffce54;
+        box-shadow: 0 6px 20px rgba(255, 206, 84, 0.5);
+        color: #1a1a1a;
+        transform: translateY(-2px);
+      }
+
+      #MA: #link {
+        text-decoration: none;
+        color: #ff4d6d;
+        font-weight: 500;
+        transition: all 0.3s ease-in-out;
+      }
+      #link:hover {
+        color: #ffce54;
+        text-decoration: underline wavy #ffce54;
+      }
+
+      h4 {
+        color: #f0f0f5;
+        font-size: 0.85rem;
+        margin-top: 15px;
+        font-weight: 400;
+        text-align: center;
+      }
+
+      @media (max-width: 600px) {
+        body {
+          padding: 15px;
+        }
+        form {
+          max-width: 280px;
+          border-radius: 12px;
+          box-shadow: 0 6px 25px rgba(255, 77, 109, 0.2);
+          padding: 15px;
+        }
+        h1 {
+          font-size: 1.6rem;
+        }
+        label {
+          font-size: 0.9rem;
+        }
+        input {
+          font-size: 0.85rem;
+          padding: 8px;
+        }
+        button {
+          font-size: 0.95rem;
+          padding: 8px;
+        }
+      }
+
+      @media (max-width: 400px) {
+        form {
+          max-width: 260px;
+          padding: 12px;
+        }
+        h1 {
+          font-size: 1.4rem;
+        }
+        label {
+          font-size: 0.85rem;
+        }
+        input {
+          font-size: 0.8rem;
+          padding: 7px;
+        }
+        button {
+          font-size: 0.9rem;
+          padding: 7px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <div>
+        <h1>Signup Form</h1>
+        <label for="Firstname"
+          >Firstname:
+          <input
+            type="text"
+            id="Firstname"
+            name="Firstname"
+            placeholder="Enter Firstname"
+            required
+          />
+        </label>
+        <label for="Middlename"
+          >Middlename:
+          <input type="text" name="Middlename" placeholder="Enter Middlename" />
+        </label>
+        <label for="Lastname"
+          >Lastname:
+          <input
+            type="text"
+            name="Lastname"
+            placeholder="Enter Lastname"
+            required
+          />
+        </label>
+        <label for="Email"
+          >Email:
+          <input type="email" name="email" placeholder="Enter Email" required />
+        </label>
+        <label for="mobile_no"
+          >Mobile Number:
+          <input
+            type="tel"
+            name="mobile_no"
+            placeholder="Enter Mobile Number"
+            required
+            inputmode="tel"
+          />
+        </label>
+        <label for="Password">
+          Password:
+          <input
+            type="password"
+            id="Password"
+            name="Password"
+            placeholder="Enter Password"
+            required
+          />
+        </label>
+        <button type="submit">Signup</button>
+        <h4>Filled Up? Click here to Login</h4>
+        <a href="Login.html" id="link">Login</a>
+      </div>
+    </form>
+  </body>
+</html>
