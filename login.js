@@ -1,3 +1,5 @@
+//The login functionality is demo because this is only User interface with frontend 
+//This js code is mainly about the dark mode functionality
 document.getElementById("link").addEventListener("click", function (e) {
   e.preventDefault();
   alert("Demo Login Success!!");
